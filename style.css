@@ -1,18 +1,18 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff8f0;
+  background-color: #FAF0E6;
   margin: 0;
   padding: 0;
   color: #333;
 }
 header {
   background-color: #b31b1b;
-  color: gold;
+  color: #b31b1b;
   padding: 1em;
   text-align: center;
 }
 nav a {
-  color: gold;
+  color: #b31b1b;
   margin: 0 1em;
   text-decoration: none;
 }
@@ -24,12 +24,12 @@ main {
 }
 footer {
   background-color: #b31b1b;
-  color: gold;
+  color: #b31b1b;
   text-align: center;
   padding: 1em;
 }
 .service-menu {
-  background-color: #fff8f0;
+  background-color: #FAF0E6;
   padding: 2em 1em;
   text-align: center;
 }
@@ -51,7 +51,7 @@ footer {
 }
 .service-card {
   background-color: #b31b1b;
-  color: gold;
+  color: #b31b1b;
   border-radius: 12px;
   padding: 1em 2em;
   width: 260px;
@@ -66,8 +66,70 @@ footer {
   margin: 0.5em 0;
   font-size: 1.1em;
 }
+.service-note {
+  background-color: #fff3e6;
+  color: #000;
+  border-left: 4px solid gold;
+  padding: 1em;
+  margin-top: 2em;
+  font-size: 1.05em;
+  text-align: center;
+}
 @media (max-width: 600px) {
   .service-card {
     width: 90%;
   }
+}
+
+/* Red headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #b31b1b;
+}
+
+/* Standard black body text */
+body, p, li, a, span, div {
+  color: #000;
+}
+
+/* Preserve gold text inside service cards */
+.service-card {
+  color: #b31b1b;
+}
+
+
+/* Apply Noto Serif SC font to entire site */
+body, h1, h2, h3, h4, h5, h6, p, a, li, div, span {
+  
+}
+
+/* Fix text color contrast for header and nav */
+header, nav a, footer {
+  color: gold;
+}
+
+/* Make sure page titles (h1 in header) remain gold */
+header h1, nav a {
+  color: gold;
+}
+
+/* Preserve gold in service cards */
+.service-card {
+  color: gold;
+}
+.service-card h3 {
+  color: gold;
+  border-bottom: 1px solid gold;
+}
+.service-card p {
+  color: gold;
+}
+
+/* Set red headings and black body for rest of site */
+body, p, li, a, span, div {
+  color: #000;
+  font-family: 'Noto Serif SC', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #b31b1b;
+  font-family: 'Noto Serif SC', serif;
 }
