@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #b31b1b;
+  color: gold;
+  padding: 1em;
+  text-align: center;
+}
+nav a {
+  color: gold;
+  margin: 0 1em;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+main {
+  padding: 2em;
+}
+footer {
+  background-color: #b31b1b;
+  color: gold;
+  text-align: center;
+  padding: 1em;
+}
+.service-menu {
+  background-color: #fff8f0;
+  padding: 2em 1em;
+  text-align: center;
+}
+.service-menu h2 {
+  color: #b31b1b;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.service-menu .note {
+  color: #b31b1b;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+.service-card {
+  background-color: #b31b1b;
+  color: gold;
+  border-radius: 12px;
+  padding: 1em 2em;
+  width: 260px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.service-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid gold;
+  padding-bottom: 0.5em;
+}
+.service-card p {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+}
+@media (max-width: 600px) {
+  .service-card {
+    width: 90%;
+  }
+}
