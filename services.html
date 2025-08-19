@@ -24,21 +24,21 @@
 <link href="style.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap" rel="stylesheet"/>
 </head>
-<body>
-<header style="display: flex; flex-direction: column; align-items: center; padding: 1em;">
-<div style="display: flex; align-items: center; gap: 1em;">
+<body class="body">
+<header class="site-header">
+<div class="brand">
 <img alt="石窟 (Grotto) – New Grotto Massage" height="40" src="assets/logo-lotus-shiku-gold-red.png" width="40"/>
 <h1>New Grotto Massage</h1>
 </div>
-<nav>
+<nav class="site-nav">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="services.html">Services</a>
+<a href="services.html" aria-current="page">Services</a>
 <a href="faq.html">FAQs</a>
 <a href="contact.html">Contact</a>
 </nav>
 </header>
-<main>
+<main class="page-wrap">
 <section class="service-menu">
 <section class="hero" style="
   background-color: #d7a86e;
@@ -51,7 +51,7 @@
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 ">
-<h2 style="font-size: 2em; color: var(--ng-red); margin-bottom: 0.5em;">Massage Services</h2>
+<h2>Massage Services</h2>
 <div class="service-grid">
 <div class="service-card"><h3>Body Massage</h3><p >60 Min – $60</p><p>90 Min – $100</p></div>
 <div class="service-card"><h3>Deep Tissue Massage</h3><p>30 Min – $50</p><p>60 Min – $70</p><p>90 Min – $110</p></div>

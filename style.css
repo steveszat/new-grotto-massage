@@ -1,135 +1,285 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #FAF0E6;
-  margin: 0;
-  padding: 0;
-  color: #333;
+
+/* New Grotto Massage – consolidated CSS for all pages (inline → CSS) */
+:root{
+  --ng-red:#b7222a;
+  --ng-gold:#d7a86e;
+  --ng-linen:#faf3e8;
+  --ng-text:#1a1a1a;
+  --ng-muted:#6b7280;
 }
-header {
-  background-color: #b31b1b;
-  color: #b31b1b;
-  padding: 1em;
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Noto Serif SC", ui-serif, Georgia, "Times New Roman", serif;
+  color:var(--ng-text);
+  background:var(--ng-red);
+  line-height:1.6;
+}
+
+/* Wrap the content area in a soft linen block */
+.page-wrap{background:var(--ng-linen)}
+
+/* Header */
+.site-header{
+  background:var(--ng-red);
+  color:#fff;
+  display:flex; flex-direction:column; align-items:center; gap:.5rem;
+  padding:1rem 1rem .75rem;
+}
+.brand{display:flex; align-items:center; gap:1rem}
+.brand h1{margin:0; color:var(--ng-gold); font-size:clamp(1.25rem, 2vw + 1rem, 1.9rem)}
+.site-nav{display:flex; gap:1rem; flex-wrap:wrap}
+.site-nav a{color:#fff; text-decoration:none; padding:.25rem .5rem; border-radius:.375rem}
+.site-nav a:hover{background:rgba(255,255,255,.12)}
+.site-nav a[aria-current="page"]{background:rgba(255,255,255,.18)}
+
+/* Footer */
+.site-footer{background:var(--ng-red); color:#fff; text-align:center; padding:1rem 1rem}
+
+/* Hero (shared) */
+.hero{
+  text-align:center;
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,.5);
+  background-color:#d7a86e;
+  background-repeat:no-repeat; background-position:center; background-size:contain;
+  padding:1rem 1rem;
+  margin:1rem;
+}
+.hero h2{font-size:2rem; margin:.25em 0 .5em}
+.hero .lede{font-size:1.125rem}
+/* Hands down, best massage in town */
+.hero .tagline{font-style:italic; color: #fff; font-weight:bold}
+/* Generic semantic text roles */
+.tagline-text {
+  font-size: 1.1em;   /* closer to normal body text size */
+  margin-top: 15px;
+  color: #fff;
+}
+
+
+.hero-accent {
+  color: #fff;   /* still controls "Relief is at hand" */
+  font-weight: bold;
+}
+
+.hero--home{background-image:url('assets/hands3_web_tiny.png')}
+.hero--about{background-image:url('assets/characters.png')}
+.hero--services{background-image:url('assets/scroll.png')}
+.hero--contact{background-image:url('assets/corded_phone2.png')}
+.hero--faq{background-image:url('assets/faq_background.png')}
+
+/* Utilities */
+.text-red{color:var(--ng-red)}
+.text-gold{color:var(--ng-gold)}
+.italic{font-style:italic}
+
+/* Services grid */
+.service-menu{padding:1rem 0}
+.service-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  width:min(1200px, 96%);
+  margin:1rem auto 0;
+}
+.service-card{
+  background:var(--ng-red);
+  color:#fff;
+  border-radius:.75rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  padding:1rem 1.25rem;
+  text-align:center;
+}
+.service-card h3{margin:.25rem 0 .5rem; color:#fff; border-bottom:2px solid var(--ng-gold); padding-bottom:.25rem}
+.note{margin-top:1rem; color:#fff; text-align:center}
+.service-note{color:#fff; text-align:center}
+
+/* Callout */
+.callout{
+  background:var(--ng-linen);
+  padding:1rem;
+  border-left:4px solid var(--ng-red);
+  margin:1.5rem 1rem 0;
+}
+.callout h3{margin:.25rem 0; color:var(--ng-gold)}
+
+/* FAQ */
+.faq{width:min(900px, 92%); margin:0 auto; text-align:left}
+.faq h3{color:#fff; margin-bottom:.25rem}
+.faq p{color:#fff; margin-top:0}
+
+/* Contact map */
+.map-embed{max-width:100%; height:350px; margin:0 1rem 1rem}
+.map-embed iframe{width:100%; height:100%; border:0}
+/* Relief is at hand */
+.hero-accent {
+  color: #fff;
+  font-weight: bold;
+}
+
+.text-white {
+  color: #fff;
+}
+/* Make the content band (between header and footer) linen again */
+main {
+  background: var(--ng-linen);
+  padding-bottom: 140px; /* adjust this to get the exact “big gap” you like */
+}
+/* 🎨 Global Theme Palette */
+:root {
+  --color-primary: #a61d2d;   /* ng-red */
+  --color-secondary: #d4a373; /* goldish accent */
+  --color-accent: #d88c1e;    /* your new body bg (orange-gold) */
+  --color-light: #f8f1e8;     /* linen */
+  --color-dark: #2a2a2a;      /* deep text fallback */
+  --color-text: #ffffff;      /* default light text */
+}
+
+/* 🌐 Site-Wide Base */
+body.body {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  font-family: 'Georgia', serif; /* or your preferred font */
+}
+
+/* 📝 Text Utility Classes */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-inverse {
+  color: var(--color-text);
+}
+
+/* 🎯 Reusable Accent Class */
+.hero-accent {
+  color: var(--color-light);
+  font-weight: bold;
+}
+.text-light {
+  color: var(--color-light);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* --- About Page Styling --- */
+
+/* Headings inside content areas */
+.about-heading {
+  font-size: 2rem;       /* larger, clear headings */
+  color: #8b0000;        /* deep red to match theme */
+  margin-bottom: 0.5em;
+  text-align: center;    /* keep consistent with home */
+}
+
+/* Subheadings */
+.about-subheading {
+  font-size: 1.4rem;
+  color: #333;           /* dark neutral */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
   text-align: center;
 }
-nav a {
-  color: #b31b1b;
-  margin: 0 1em;
-  text-decoration: none;
+
+/* Body text */
+.about-text {
+  font-size: 1rem;
+  color: #fff;           /* white text on dark bg */
+  line-height: 1.6;      /* add breathing room */
+  margin-bottom: 1em;
+  text-align: justify;   /* optional: makes it look neater */
+  max-width: 800px;      /* avoid super-wide text */
+  margin-left: auto;
+  margin-right: auto;
 }
-nav a:hover {
+/* ===== Learn More panel on About page ===== */
+.learn-box {
+  background: var(--ng-linen);
+  border-left: 4px solid var(--ng-red);
+  padding: 16px 20px;
+  margin: 24px 0;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.06);
+}
+
+.learnbox {
+  background-color: rgba(255, 255, 255, 0.0); /* 0.0 = fully transparent, 1.0 = fully solid */
+  border: 5px solid #d88a1d; /* optional: keep border for definition */
+  padding: 15px;
+  border-radius: 6px;        /* softer corners */
+}
+
+
+/* list/links cleanup */
+.learn-links {
+  list-style: none;           /* remove the stray white dots */
+  margin: 8px 0 0;
+  padding-left: 1rem;         /* slight indent to line up emojis/text */
+}
+
+.learn-links li { 
+  margin: 6px 0; 
+}
+
+.learn-links a {
+  color: var(--ng-red);
+  font-weight: 600;
   text-decoration: underline;
 }
-main {
-  padding: 2em;
+.learn-links a:hover {
+  text-decoration: none;
+  filter: brightness(1.08);
 }
-footer {
-  background-color: #b31b1b;
-  color: #b31b1b;
-  text-align: center;
-  padding: 1em;
-}
-.service-menu {
-  background-color: #FAF0E6;
-  padding: 2em 1em;
-  text-align: center;
-}
-.service-menu h2 {
-  color: #b31b1b;
-  font-size: 2em;
-  margin-bottom: 0.5em;
-}
-.service-menu .note {
-  color: #b31b1b;
-  font-weight: bold;
-  margin-bottom: 2em;
-}
-.service-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5em;
-}
-.service-card {
-  background-color: #b31b1b;
-  color: #b31b1b;
-  border-radius: 12px;
-  padding: 1em 2em;
-  width: 260px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.service-card h3 {
-  margin-top: 0;
-  border-bottom: 1px solid gold;
-  padding-bottom: 0.5em;
-}
-.service-card p {
-  margin: 0.5em 0;
-  font-size: 1.1em;
-}
-.service-note {
-  background-color: #fff3e6;
-  color: #000;
-  border-left: 4px solid gold;
-  padding: 1em;
-  margin-top: 2em;
-  font-size: 1.05em;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .service-card {
-    width: 90%;
-  }
+/* About: "Learn More..." mini-section (no wrapper needed) */
+.about h3.learn-more {
+  margin: 1.25rem 0 .5rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--ng-gold);
+  text-shadow: 0 1px 0 rgba(0,0,0,.12);
 }
 
-/* Red headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #b31b1b;
+.about ul.learn-links {
+  list-style: none;         /* removes default dots */
+  margin: .25rem 0 0;
+  padding-left: 1rem;       /* slight indent for emoji + text */
 }
 
-/* Standard black body text */
-body, p, li, a, span, div {
-  color: #000;
+.about ul.learn-links li {
+  margin: .35rem 0;
 }
 
-/* Preserve gold text inside service cards */
-.service-card {
-  color: #b31b1b;
+.about ul.learn-links a {
+  color: var(--ng-red);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
-
-/* Apply Noto Serif SC font to entire site */
-body, h1, h2, h3, h4, h5, h6, p, a, li, div, span {
-  
-}
-
-/* Fix text color contrast for header and nav */
-header, nav a, footer {
-  color: gold;
-}
-
-/* Make sure page titles (h1 in header) remain gold */
-header h1, nav a {
-  color: gold;
-}
-
-/* Preserve gold in service cards */
-.service-card {
-  color: gold;
-}
-.service-card h3 {
-  color: gold;
-  border-bottom: 1px solid gold;
-}
-.service-card p {
-  color: gold;
-}
-
-/* Set red headings and black body for rest of site */
-body, p, li, a, span, div {
-  color: #000;
-  font-family: 'Noto Serif SC', serif;
-}
-h1, h2, h3, h4, h5, h6 {
-  color: #b31b1b;
-  font-family: 'Noto Serif SC', serif;
+.about ul.learn-links a:hover {
+  text-decoration: none;
+  filter: brightness(1.08);
 }
