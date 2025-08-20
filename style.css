@@ -65,11 +65,40 @@ body{
   font-weight: bold;
 }
 
-.hero--home{background-image:url('assets/hands3_web_tiny.png')}
-.hero--about{background-image:url('assets/characters.png')}
-.hero--services{background-image:url('assets/scroll.png')}
-.hero--contact{background-image:url('assets/corded_phone2.png')}
-.hero--faq{background-image:url('assets/faq_background.png')}
+.hero--services{
+  background-image: image-set(
+    url("assets/optimized/scroll.webp") type("image/webp"),
+    url("assets/scroll.png")           type("image/png")
+  );
+}
+.hero--about{
+  background-image: image-set(
+    url("assets/optimized/characters.webp") type("image/webp"),
+    url("assets/characters.png")            type("image/png")
+  );
+}
+.hero--contact{
+  background-image: image-set(
+    url("assets/optimized/corded_phone2.webp") type("image/webp"),
+    url("assets/corded_phone2.png")            type("image/png")
+  );
+}
+/* FAQ hero */
+.hero--faq {
+  background-image: image-set(
+    url("assets/optimized/faq_background.webp") type("image/webp"),
+    url("assets/faq_background.png")            type("image/png")
+  );
+}
+
+/* If hands3_web_tiny.png is a background anywhere */
+.bg-hands3 {
+  background-image: image-set(
+    url("assets/optimized/hands3_web_tiny.webp") type("image/webp"),
+    url("assets/hands3_web_tiny.png")            type("image/png")
+  );
+}
+
 
 /* Utilities */
 .text-red{color:var(--ng-red)}
