@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | New Grotto Massage – San Antonio, TX</title>
-  <meta name="description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio."/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicons (PNG required; optional WebP for modern browsers) -->
-  <link rel="icon" type="image/webp" href="assets/logo-lotus-icon-32.webp" sizes="32x32">
-  <link rel="icon" type="image/png"  href="assets/logo-lotus-icon-32.png"  sizes="32x32">
-  <link rel="icon" type="image/webp" href="assets/logo-lotus-icon-48.webp" sizes="48x48">
-  <link rel="icon" type="image/png"  href="assets/logo-lotus-icon-48.png"  sizes="48x48">
-  <link rel="apple-touch-icon" href="assets/logo-lotus-icon-180.png">
+  <title>About | New Grotto Massage – San Antonio, TX</title>
+  <meta name="description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio." />
+  <link rel="canonical" href="https://newgrottomassage.com/about.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Favicons (keep your PNGs; serve WebP where available) -->
+  <link rel="icon" type="image/webp" href="assets/logo-lotus-icon-32.webp" sizes="32x32" />
+  <link rel="icon" type="image/png"  href="assets/logo-lotus-icon-32.png"  sizes="32x32" />
+  <link rel="icon" type="image/webp" href="assets/logo-lotus-icon-48.webp" sizes="48x48" />
+  <link rel="icon" type="image/png"  href="assets/logo-lotus-icon-48.png"  sizes="48x48" />
+  <link rel="apple-touch-icon" href="assets/logo-lotus-icon-180.png" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About | New Grotto Massage – San Antonio, TX"/>
-  <meta property="og:description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio."/>
-  <meta property="og:image" content="https://newgrottomassage.com/assets/og-1200x630.png"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://newgrottomassage.com/about.html"/>
+  <meta property="og:site_name" content="New Grotto Massage" />
+  <meta property="og:title" content="About | New Grotto Massage – San Antonio, TX" />
+  <meta property="og:description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newgrottomassage.com/about.html" />
+  <meta property="og:image" content="https://newgrottomassage.com/assets/og-1200x630.png" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="About | New Grotto Massage – San Antonio, TX"/>
-  <meta name="twitter:description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio."/>
-  <meta name="twitter:image" content="https://newgrottomassage.com/assets/og-1200x630.png"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About | New Grotto Massage – San Antonio, TX" />
+  <meta name="twitter:description" content="Learn about the philosophy and benefits of Traditional Chinese Massage at New Grotto Massage in San Antonio." />
+  <meta name="twitter:image" content="https://newgrottomassage.com/assets/og-1200x630.png" />
 
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD (minimal Organization markup; safe, non-location specific) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "New Grotto Massage",
+    "url": "https://newgrottomassage.com/",
+    "logo": "https://newgrottomassage.com/assets/logo-lotus-shiku-gold-red.png",
+    "sameAs": []
+  }
+  </script>
 </head>
+
 <body class="body about">
   <header class="site-header">
     <div class="brand">
       <picture>
-        <source srcset="assets/optimized/logo-lotus-shiku-gold-red.webp" type="image/webp">
-        <img src="assets/logo-lotus-shiku-gold-red.png"
-             alt="石窟 (Grotto) – New Grotto Massage"
-             width="40" height="40">
+        <source srcset="assets/optimized/logo-lotus-shiku-gold-red.webp" type="image/webp" />
+        <img
+          src="assets/logo-lotus-shiku-gold-red.png"
+          alt="石窟 (Grotto) – New Grotto Massage"
+          width="40" height="40" />
       </picture>
-      <h1>New Grotto Massage</h1>
+      <h1 class="visually-hidden">New Grotto Massage</h1>
     </div>
-    <nav class="site-nav">
+
+    <nav class="site-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html" aria-current="page">About</a>
       <a href="services.html">Services</a>
@@ -52,28 +73,19 @@
   </header>
 
   <main class="page-wrap">
-    <section class="hero"
-      style="
-        background-image: image-set(
-          url('assets/optimized/characters.webp') type('image/webp'),
-          url('assets/characters.png') type('image/png')
-        );
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        text-align: center;
-        padding: 2em 1em;
-        color: #fff;
-        text-shadow: 1px 1px 3px rgba(0,0,0,.5);
-      ">
+    <section class="hero">
       <h2>About Chinese Massage</h2>
 
-      <div class="faq" style="max-width: 400px; margin: auto; text-align: left;">
+      <div class="faq">
         <p class="tagline">
-          Chinese massage is more than relaxation — it's a form of traditional medicine practiced for over 2,000 years. Unlike Western massage, which focuses mainly on muscles, Chinese techniques work to restore the body’s energy balance and stimulate natural healing.
+          Chinese massage is more than relaxation — it's a form of traditional medicine practiced for over 2,000 years.
+          Unlike Western massage, which focuses mainly on muscles, Chinese techniques work to restore the body’s energy
+          balance and stimulate natural healing.
         </p>
         <p class="tagline">
-          At New Grotto Massage, we use authentic methods like Tui Na, a hands-on technique that targets pressure points, relieves tension, and improves circulation. Many of our clients find that regular Chinese massage helps reduce chronic pain, boost energy, and calm the mind.
+          At New Grotto Massage, we use authentic methods like Tui Na, a hands-on technique that targets pressure
+          points, relieves tension, and improves circulation. Many of our clients find that regular Chinese massage
+          helps reduce chronic pain, boost energy, and calm the mind.
         </p>
         <p class="tagline">
           Come experience the deep healing and balance that only traditional Chinese massage can offer.
