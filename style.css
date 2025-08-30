@@ -312,3 +312,9 @@ body.body {
   text-decoration: none;
   filter: brightness(1.08);
 }
+.about-hero {
+  background-image: url('assets/characters.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
