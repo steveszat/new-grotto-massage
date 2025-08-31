@@ -8,32 +8,47 @@
   <link href="style.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
-<body>
-<header>
-  <h1>New Grotto Massage</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="faq.html">FAQs</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
-  <h2>Understanding Pressure Points</h2>
-  <p>Pressure points — known as <strong>xué wèi (穴位)</strong> in Traditional Chinese Medicine — are specific areas on the body believed to be connected to energy channels called meridians. Stimulating these points can promote balance, reduce pain, and improve circulation.</p>
+<body class="body">
+  <!-- Standard site header (matches main pages) -->
+  <header class="site-header">
+    <div class="brand">
+      <img
+        src="assets/logo-lotus-shiku-gold-red.png"
+        alt="石窟 (Grotto) – New Grotto Massage"
+        width="40" height="40" />
+      <h1>New Grotto Massage</h1>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <img src="assets/understanding_pressure_points.png" alt="Pressure point diagram" style="max-width: 100%; height: auto; margin: 1em 0;">
+<main class="page-wrap">
+  <section class="hero-pressure">
+    <h2>Understanding Pressure Points</h2>
+    <p>
+      Pressure points — known as <strong>xué wèi (穴位)</strong> in Traditional Chinese Medicine — 
+      are specific areas on the body believed to be connected to energy channels called meridians. 
+      Stimulating these points can promote balance, reduce pain, and improve circulation.
+    </p>
 
-  <h3>Explore Specific Areas:</h3>
-  <ul>
-    <li><a href="pressure-points-neck.html">Neck & Shoulders</a></li>
-    <li><a href="pressure-points-back.html">Back</a></li>
-    <li><a href="pressure-points-hands-feet.html">Hands & Feet</a></li>
-  </ul>
+    <img src="assets/understanding_pressure_points.png" alt="Pressure point diagram" style="max-width: 100%; height: auto; margin: 1em 0;">
+
+    <h3>Explore Specific Areas:</h3>
+    <ul>
+      <li><a href="pressure-points-neck.html">Neck &amp; Shoulders</a></li>
+      <li><a href="pressure-points-back.html">Back</a></li>
+      <li><a href="pressure-points-hands-feet.html">Hands &amp; Feet</a></li>
+    </ul>
+  </section>
 </main>
-<footer>
-  <p>© 2025 - AI Alchemy</p>
-</footer>
+
+  <footer>
+    <p>© 2025 - AI Alchemy</p>
+  </footer>
 </body>
 </html>

@@ -317,3 +317,46 @@ body.body {
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Pressure points page styling */
+.hero-pressure {
+  background-color: #f7efe0;
+  padding: 1rem 1rem 2rem;
+  color: #333;               /* dark readable body text */
+  font-size: 1.1rem;         /* bump text size slightly */
+  line-height: 1.6;          /* improve readability */
+}
+
+/* Pressure points intro text */
+.hero-pressure p {
+  font-size: 2.25rem;   /* ~20px */
+  line-height: 1.7;     /* more breathing room */
+  margin-bottom: 1em;
+}
+
+.hero-pressure h2 {
+  font-size: 2.75rem;   /* ~28px */
+  font-weight: 700;
+}
+
+.hero-pressure h3 {
+  font-size: 2.4rem;    /* ~22px */
+  font-weight: 700;
+  color: #b22222;       /* brand red */
+  margin-top: 1.5em;
+}
+
+.hero-pressure ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0;
+}
+
+.hero-pressure ul li {
+  font-size: 2.2rem;    /* ~19px */
+  margin: 0.5em 0;
+}
+
+.hero-pressure ul li a {
+  color: #333;
+  text-decoration: underline;
+}
