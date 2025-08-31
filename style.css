@@ -285,12 +285,11 @@ body.body {
 }
 /* About: "Learn More..." mini-section (no wrapper needed) */
 .about h3.learn-more {
-  margin: 1.25rem 0 .5rem;
-  font-style: italic;
+  color: #b22222; /* or #fff if you prefer white text */
+  margin-top: 1.5em;
   font-weight: 700;
-  color: var(--ng-gold);
-  text-shadow: 0 1px 0 rgba(0,0,0,.12);
 }
+
 
 .about ul.learn-links {
   list-style: none;         /* removes default dots */
