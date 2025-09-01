@@ -83,7 +83,11 @@
   <main class="page-wrap">
     <section class="hero" style="
       background-color: #d7a86e;
-      background-image: url('assets/hands3_web_tiny.png');
+      /* Optimized (WebP) with PNG fallback */
+      background-image: image-set(
+        url('assets/optimized/hands3_web_tiny.webp') type('image/webp'),
+        url('assets/hands3_web_tiny.png') type('image/png')
+      );
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
