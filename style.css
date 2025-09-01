@@ -76,9 +76,11 @@ body{
     url("assets/optimized/characters.webp") type("image/webp"),
     url("assets/characters.png") type("image/png")
   );
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;   /* instead of cover */
 }
+
 
 .hero--contact{
   background-image: image-set(
