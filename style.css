@@ -71,12 +71,15 @@ body{
     url("assets/scroll.png")           type("image/png")
   );
 }
-.hero--about{
+.hero-about {
   background-image: image-set(
     url("assets/optimized/characters.webp") type("image/webp"),
-    url("assets/characters.png")            type("image/png")
+    url("assets/characters.png") type("image/png")
   );
+  background-size: cover;
+  background-position: center;
 }
+
 .hero--contact{
   background-image: image-set(
     url("assets/optimized/corded_phone2.webp") type("image/webp"),
