@@ -1,6 +1,3 @@
-*.zip
-.env
-*.xcf
 # -----------------------
 # Git internals (local only)
 # -----------------------
@@ -51,3 +48,51 @@ dist/
 build/
 .cache/
 node_modules/
+
+# -----------------------
+# Image & design tool artifacts
+# -----------------------
+# Photoshop
+*.psd
+*.psb
+*.pdd
+*.abr
+*.ase
+*.atn
+*.csh
+*.pat
+
+# Illustrator
+*.ai
+*.eps
+*.ait
+
+# InDesign
+*.indd
+*.indl
+*.indt
+*.idml
+*.inx
+
+# GIMP
+*.xcf
+*.gbr
+*.gih
+*.pat
+
+# Affinity Suite
+*.afdesign
+*.afphoto
+*.afpub
+
+# CorelDRAW
+*.cdr
+
+# Canva often exports intermediate zips
+*.canva
+*.zip
+
+# Other large binary source formats
+*.tif
+*.tiff
+*.bmp
