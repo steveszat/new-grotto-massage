@@ -403,3 +403,34 @@ body.body {
   color:#fff;
   margin-top:0;
 }
+
+/* ===== Contact (scoped to contact.html only) ===== */
+
+/* Tweak these to taste */
+.page-contact { --contact-hero-padding: 2em 1em; --contact-map-height: 350px; }
+
+.page-contact .hero--contact{
+  color:#fff;
+  background-color:#d7a86e;
+  background-image: image-set(
+    url("assets/optimized/corded_phone2.webp") type("image/webp"),
+    url("assets/corded_phone2.png")            type("image/png")
+  );
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: var(--contact-hero-padding);
+}
+
+.page-contact .map-frame{
+  max-width:100%;
+  height: var(--contact-map-height);
+}
+
+.page-contact .map-frame iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
