@@ -478,3 +478,56 @@ body.body {
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+/* ===== Etiquette (scoped to etiquette.html only) ===== */
+
+/* Tweak these to taste */
+.page-etiquette {
+  --etiquette-hero-padding: 2em 1em;
+  --etiquette-tagline-width: 600px;
+  --etiquette-content-width: 900px;
+}
+
+/* Hero replaces previous inline styles */
+.page-etiquette .hero--etiquette{
+  background-color:#d7a86e;
+  /* If you later want a background image, uncomment and set:
+  background-image:image-set(
+    url("assets/optimized/faq_background.webp") type("image/webp"),
+    url("assets/faq_background.png")            type("image/png")
+  );
+  */
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  text-align:center;
+  padding: var(--etiquette-hero-padding);
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,.6);
+}
+
+/* Tagline width: was max-width:600px; margin:.5em auto; */
+.page-etiquette .etiquette-tagline{
+  max-width: var(--etiquette-tagline-width);
+  margin: .5em auto;
+}
+
+/* "First visit?" spacer: was margin-top:1rem */
+.page-etiquette .etiquette-lead{
+  margin-top: 1rem;
+}
+
+/* Content container: was max-width:900px; margin:2rem auto; padding:0 1rem; */
+.page-etiquette .etiquette-content{
+  max-width: var(--etiquette-content-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* CTA row: replaces <div style="margin-top:2rem;"><span style="margin:0 .5rem;"></span> */
+.page-etiquette .etiquette-cta{
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;           /* replaces the spacer span */
+  flex-wrap: wrap;
+}
