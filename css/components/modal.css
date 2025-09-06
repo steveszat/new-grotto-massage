@@ -1,0 +1,1 @@
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:var(--space-4)}.modal__dialog{background:var(--color-surface-contrast);color:var(--color-text);border-radius:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.2);width:min(40rem,100%);padding:var(--space-4)}.modal.is-open{display:flex}

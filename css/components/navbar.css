@@ -1,0 +1,1 @@
+.navbar{display:flex;align-items:center;gap:var(--space-3)}.navbar__list{display:flex;gap:var(--space-3);list-style:none}.navbar__link{padding:.5rem .75rem;border-radius:.25rem}.navbar__link[aria-current="page"],.navbar__link.is-active{background:var(--color-brand-primary);color:#fff}

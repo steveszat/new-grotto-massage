@@ -1,0 +1,1 @@
+.container{width:min(100% - 2rem,var(--container-max));margin-inline:auto}.container--narrow{width:min(100% - 2rem,var(--container-narrow));margin-inline:auto}.section{padding-block:var(--space-5)}

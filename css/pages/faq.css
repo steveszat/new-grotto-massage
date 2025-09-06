@@ -1,0 +1,21 @@
+/* FAQ page-only styles (scoped by .page-faq) */
+.page-faq .hero--faq { padding-block: var(--space-4); }
+.page-faq .faq-intro { margin-block: var(--space-3); }
+.page-faq .faq-col {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 65ch;
+}
+.page-faq .question {
+  font-weight: 700;
+  font-size: var(--step-1);
+  margin-top: var(--space-3);
+}
+.page-faq .answer {
+  margin-top: .25rem;
+  color: var(--color-text);
+}
+
+/* Optional: emphasize key negatives without color names */
+.page-faq .answer em,
+.page-faq .answer strong { font-weight: 600; }
