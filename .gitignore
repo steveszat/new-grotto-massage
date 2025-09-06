@@ -4,3 +4,10 @@ node_modules/
 dist/
 .env
 *.xcf
+# Ignore Git hooks (local only, not shared)
+.git/hooks/
+
+# Ignore any hook scripts you might copy around
+pre-commit
+pre-push
+commit-msg
