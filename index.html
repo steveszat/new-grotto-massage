@@ -10,13 +10,12 @@
   <link rel="canonical" href="https://newgrottomassage.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- Icons (adjust paths if needed) -->
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-lotus-icon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="assets/logo-lotus-icon-48.png" />
   <link rel="apple-touch-icon" href="assets/logo-lotus-icon-180.png" />
 
   <!-- Styles & fonts -->
-  <link rel="preload" href="style.css" as="style" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -65,7 +64,7 @@
   </script>
 </head>
 
-<body class="body">
+<body class="body page-home">
   <header class="site-header">
     <div class="brand">
       <img src="assets/logo-lotus-shiku-gold-red.png" width="40" height="40" alt="石窟 (Grotto) – New Grotto Massage logo" />
@@ -81,24 +80,10 @@
   </header>
 
   <main class="page-wrap">
-    <section class="hero" style="
-      background-color: #d7a86e;
-      /* Optimized (WebP) with PNG fallback */
-      background-image: image-set(
-        url('assets/optimized/hands3_web_tiny.webp') type('image/webp'),
-        url('assets/hands3_web_tiny.png') type('image/png')
-      );
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-align: center;
-      padding: 2em 1em;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,.5);
-    ">
+    <section class="hero hero--home">
       <h2>Sore Back? Stiff Neck? Tense Shoulders?<br><span class="hero-accent">Relief is at hand.</span></h2>
 
-      <div class="faq" style="max-width: 340px; margin: 0 auto; text-align: left;">
+      <div class="home-intro">
         <p class="tagline-text">
           Walk in anytime. Let our skilled hands melt away tension, soothe your pain, and help you feel like yourself again.
         </p>
@@ -110,9 +95,8 @@
         </p>
         <p>
           Open daily 9:30 AM–9:30 PM •
-          <a href="tel:+12107353333" style="color: #fff; text-decoration: underline;">(210) 735-3333</a>
+          <a href="tel:+12107353333" class="phone-link">(210) 735-3333</a>
         </p>
-
       </div>
     </section>
   </main>
