@@ -365,3 +365,41 @@ body.body {
   color: #333;
   text-decoration: underline;
 }
+/* ===== FAQ (page-scoped; affects faq.html only) ===== */
+
+/* Adjust this single number to squeeze/loosen the column */
+.page-faq { --faq-col-width: 480px; } /* try 460 or 500 if you want tighter/wider */
+
+.page-faq .hero--faq{
+  background-color:#d7a86e;
+  background-image:image-set(
+    url("assets/optimized/faq_background.webp") type("image/webp"),
+    url("assets/faq_background.png")           type("image/png")
+  );
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  text-align:center;
+  padding:2em 1em;
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,.7);
+}
+
+.page-faq .faq-intro{ margin:1rem 0; text-align:center; }
+
+.page-faq .faq-col{
+  max-width: var(--faq-col-width);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.page-faq .question{
+  color: var(--ng-red);   /* brand token; change here later if you choose */
+  margin-bottom:.25rem;
+  font-weight:700;
+}
+
+.page-faq .answer{
+  color:#fff;
+  margin-top:0;
+}
