@@ -83,14 +83,13 @@ body{
 .about-hero-image {
   display: block;
   margin: 0 auto 1rem auto;
-  max-width: 380px;   /* adjust as needed */
+  max-width: 380px;
   height: auto;
   content: image-set(
-    url("assets/optimized/building-the-new-you.webp") type("image/webp"),
-    url("assets/building-the-new-you.png") type("image/png")
+    url("assets/optimized/building-the-new-you2.webp") type("image/webp"),
+    url("assets/building-the-new-you2.png") type("image/png")
   );
 }
-
 
 .hero--contact{
   background-image: image-set(
