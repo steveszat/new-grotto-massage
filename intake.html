@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>New Grotto Massage – Client Intake & Consent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#fff; --ink:#111; --muted:#666; --accent:#b91c1c; --line:#e5e7eb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+    header, main, footer { max-width:840px; margin:0 auto; padding:16px; }
+    header h1 { margin:0 0 6px; font-size:20px; }
+    header .sub { color:var(--muted); font-size:14px; }
+    h2 { margin:24px 0 8px; font-size:18px; }
+    fieldset { border:1px solid var(--line); border-radius:10px; padding:12px; margin:16px 0; }
+    legend { font-weight:600; padding:0 6px; }
+    label { display:block; margin:10px 0 4px; font-weight:600; }
+    .row { display:grid; grid-template-columns:1fr; gap:12px; }
+    @media (min-width:640px){ .row.two { grid-template-columns:1fr 1fr; } .row.three { grid-template-columns:1fr 1fr 1fr; } }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
+      width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit;
+    }
+    textarea { min-height:90px; resize:vertical; }
+    .checkgrid { display:grid; grid-template-columns:1fr; gap:8px; }
+    @media (min-width:520px){ .checkgrid { grid-template-columns:1fr 1fr; } }
+    .inline { display:flex; align-items:center; gap:8px; }
+    .help { color:var(--muted); font-size:13px; }
+    .counter { color:var(--muted); font-size:12px; text-align:right; }
+    .muted { color:var(--muted); }
+    .note { background:#fff7ed; border:1px solid #fed7aa; padding:10px 12px; border-radius:8px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
+    button {
+      appearance:none; cursor:pointer; border-radius:10px; padding:12px 16px; font-weight:600; border:1px solid var(--line);
+    }
+    .primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .ghost { background:#fff; color:var(--ink); }
+    .divider { height:1px; background:var(--line); margin:24px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>New Grotto Massage – Client Intake & Consent</h1>
+    <div class="sub">3700 Fredericksburg Rd., #103 • San Antonio, TX 78201 • (210) 735-3333</div>
+  </header>
+
+  <main>
+    <form id="intakeForm" action="/api/intake" method="post" novalidate>
+      <!-- Contact -->
+      <fieldset>
+        <legend>Client Information</legend>
+        <div class="row two">
+          <div>
+            <label for="name">Full Name *</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="intakeDate">Date</label>
+            <input id="intakeDate" name="intakeDate" type="text" readonly>
+          </div>
+        </div>
+        <div class="row two">
+          <div>
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address">
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="row two">
+          <div class="inline">
+            <input id="under17" name="under17" type="checkbox" value="yes">
+            <label for="under17" style="font-weight:400;">I am under the age of 17 (parent/guardian consent required)</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Health -->
+      <fieldset>
+        <legend>Health History</legend>
+        <div class="checkgrid">
+          <label class="inline"><input type="checkbox" name="health[]" value="Spinal Problems"> Spinal Problems</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Allergies"> Allergies</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="High Blood Pressure"> High Blood Pressure</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Bruise Easily"> Bruise Easily</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Varicose Veins"> Varicose Veins</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Migraines"> Migraines</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Heart Conditions"> Heart Conditions</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Injuries"> Injuries</label>
+          <label class="inline"><input type="checkbox" name="health[]" value="Smoking"> Smoking</label>
+        </div>
+
+        <div class="inline" style="margin-top:8px;">
+          <input id="pregnant" type="checkbox" name="pregnant" value="yes">
+          <label for="pregnant" style="font-weight:400;">Currently Pregnant</label>
+        </div>
+
+        <div id="dueDateWrap" style="display:none; margin-top:8px;">
+          <label for="dueDate">Due Date</label>
+          <input id="dueDate" name="dueDate" type="date">
+        </div>
+
+        <label for="healthNotes" style="margin-top:12px;">Please explain any checked items</label>
+        <textarea id="healthNotes" name="healthNotes" maxlength="1000" placeholder="Provide details that help your therapist tailor your session."></textarea>
+        <div class="counter" data-for="healthNotes">0 / 1000</div>
+
+        <div style="margin-top:8px;">
+          <span class="muted" style="display:block; margin-bottom:6px; font-weight:600;">Any medical conditions your therapist should be aware of?</span>
+          <label class="inline"><input type="radio" name="medAware" value="Yes"> Yes</label>
+          <label class="inline"><input type="radio" name="medAware" value="No" checked> No</label>
+        </div>
+
+        <label for="medications" style="margin-top:8px;">Current Medications</label>
+        <textarea id="medications" name="medications" maxlength="800" placeholder="List names/dosages if relevant."></textarea>
+        <div class="counter" data-for="medications">0 / 800</div>
+      </fieldset>
+
+      <!-- Massage preferences -->
+      <fieldset>
+        <legend>Massage Request</legend>
+        <div class="help">Check all that apply.</div>
+        <div class="checkgrid" style="margin-top:8px;">
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Swedish / Relaxation"> Swedish / Relaxation</label>
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Deep Tissue"> Deep Tissue</label>
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Pregnancy Massage"> Pregnancy Massage</label>
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Acupressure"> Acupressure</label>
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Reflexology"> Reflexology</label>
+          <label class="inline"><input type="checkbox" name="massageType[]" value="Trigger Point"> Trigger Point</label>
+        </div>
+
+        <label for="painAreas" style="margin-top:12px;">Areas of pain/tension</label>
+        <textarea id="painAreas" name="painAreas" maxlength="600" placeholder="e.g., lower back, right shoulder, calves"></textarea>
+        <div class="counter" data-for="painAreas">0 / 600</div>
+
+        <label for="avoidAreas" style="margin-top:12px;">Areas to be avoided</label>
+        <textarea id="avoidAreas" name="avoidAreas" maxlength="600" placeholder="e.g., recent injury, ticklish feet, sensitive neck"></textarea>
+        <div class="counter" data-for="avoidAreas">0 / 600</div>
+      </fieldset>
+
+      <!-- Consent & policy (core points from page 2) -->
+      <fieldset>
+        <legend>Consent & Policies</legend>
+        <div class="note">
+          Massage therapy is not a substitute for medical examination or diagnosis. Therapists do not prescribe
+          medical treatments or pharmaceuticals and do not perform spinal adjustments. If you have a serious
+          medical diagnosis, you may be asked to provide a physician’s written consent before services.
+        </div>
+
+        <ul class="muted" style="margin:10px 0 0 18px;">
+          <li>Sexual remarks or advances will end the session immediately; full payment will still be due.</li>
+          <li>You are not allowed to touch the therapist for any reason.</li>
+          <li>Female clients: if desiring a breast massage, indicate this below; the area will remain draped.</li>
+          <li>The genital area of all clients and the gluteal cleavage of all clients remain draped at all times.</li>
+          <li>If you are uncomfortable for any reason, please tell the therapist to end the session.</li>
+        </ul>
+
+        <label for="partsMassaged" style="margin-top:12px;">Parts of the body to be massaged (optional)</label>
+        <textarea id="partsMassaged" name="partsMassaged" maxlength="600"></textarea>
+        <div class="counter" data-for="partsMassaged">0 / 600</div>
+      </fieldset>
+
+      <!-- Electronic signature (typed) -->
+      <fieldset>
+        <legend>Electronic Signature</legend>
+        <p class="muted" style="margin-top:0;">
+          By typing my name below and checking the box, I understand and agree that this action constitutes my
+          electronic signature. I consent to the use of electronic records and signatures, and I confirm that the
+          information I have provided is true and correct. I acknowledge that this electronic signature carries the same
+          legal effect as a handwritten signature.
+        </p>
+
+        <label class="inline" style="margin-top:8px;">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span><strong>I agree to sign electronically</strong></span>
+        </label>
+
+        <div class="row two" style="margin-top:8px;">
+          <div>
+            <label for="sigName">Name (type full legal name) *</label>
+            <input id="sigName" name="sigName" type="text" required>
+          </div>
+          <div>
+            <label for="sigDate">Signature Date</label>
+            <input id="sigDate" name="sigDate" type="text" readonly>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Submission -->
+      <div class="actions">
+        <button type="submit" class="primary">Submit</button>
+        <button type="button" class="ghost" id="printBtn">Print (optional)</button>
+      </div>
+
+      <!-- Hidden metadata -->
+      <input type="hidden" id="isoTimestamp" name="isoTimestamp" />
+    </form>
+
+    <div class="divider"></div>
+
+    <p class="muted" style="font-size:13px;">
+      Privacy notice: Your information is used only to provide services and keep required client records. By submitting,
+      you consent to electronic records and signatures. If you prefer paper, please ask at the front desk.
+    </p>
+  </main>
+
+  <footer>
+    <div class="muted" style="font-size:13px;">&copy; <span id="year"></span> New Grotto Massage</div>
+  </footer>
+
+  <script>
+    // Autofill dates
+    const todayLocal = new Date();
+    const todayStr = todayLocal.toLocaleDateString();
+    document.getElementById('intakeDate').value = todayStr;
+    document.getElementById('sigDate').value = todayStr;
+    document.getElementById('isoTimestamp').value = new Date().toISOString();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Conditional due date
+    const pregnant = document.getElementById('pregnant');
+    const dueWrap = document.getElementById('dueDateWrap');
+    pregnant.addEventListener('change', () => {
+      dueWrap.style.display = pregnant.checked ? 'block' : 'none';
+      const due = document.getElementById('dueDate');
+      if (!pregnant.checked) due.value = '';
+    });
+
+    // Simple counters
+    function bindCounter(id){
+      const el = document.getElementById(id);
+      const counter = document.querySelector(`.counter[data-for="${id}"]`);
+      if (!el || !counter) return;
+      const max = parseInt(el.getAttribute('maxlength') || '0', 10);
+      const update = () => counter.textContent = `${el.value.length} / ${max}`;
+      el.addEventListener('input', update);
+      update();
+    }
+    ['healthNotes','medications','painAreas','avoidAreas','partsMassaged'].forEach(bindCounter);
+
+    // Print helper
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Client-side validation guard for signature consent + name
+    document.getElementById('intakeForm').addEventListener('submit', (e) => {
+      const consent = document.getElementById('consent');
+      const sigName = document.getElementById('sigName');
+      if (!consent.checked || !sigName.value.trim()){
+        alert('Please check “I agree to sign electronically” and type your full legal name.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
