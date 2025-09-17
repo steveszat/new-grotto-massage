@@ -109,10 +109,15 @@
         <textarea id="healthNotes" name="healthNotes" maxlength="1000" placeholder="Provide details that help your therapist tailor your session."></textarea>
         <div class="counter" data-for="healthNotes">0 / 1000</div>
 
+        <!-- Any medical conditions + simple textbox directly beneath Yes/No -->
         <div style="margin-top:8px;">
           <span class="muted" style="display:block; margin-bottom:6px; font-weight:600;">Any medical conditions your therapist should be aware of?</span>
-          <label class="inline"><input type="radio" name="medAware" value="Yes"> Yes</label>
-          <label class="inline"><input type="radio" name="medAware" value="No" checked> No</label>
+          <label class="inline"><input type="radio" name="medAware" value="Yes" id="medAwareYes"> Yes</label>
+          <label class="inline"><input type="radio" name="medAware" value="No"  id="medAwareNo"  checked> No</label>
+        </div>
+        <div style="margin-top:8px;">
+          <label for="medAwareExplain">Explain</label>
+          <input id="medAwareExplain" name="medAwareExplain" type="text" maxlength="800" placeholder="Briefly explain, if applicable">
         </div>
 
         <label for="medications" style="margin-top:8px;">Current Medications</label>
