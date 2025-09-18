@@ -755,3 +755,85 @@ body.body {
   margin: 2rem 0 0;
   text-align: center;
 }
+
+/* ===== Intake page: extracted inline styles ===== */
+
+/* Layout caps to match the content width used on other pages */
+.page-intake header,
+.page-intake main,
+.page-intake footer {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Typography helpers */
+.subtle { color: var(--ng-muted); font-size: 14px; margin: 8px 0 0; }
+.muted  { color: var(--ng-muted); }
+
+/* Spacing utilities used to replace inline margins */
+.mt-8  { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+
+/* Lists that previously used margin:10px 0 0 18px */
+.list-indent { margin: 10px 0 0 18px; }
+
+/* Grid/form layout extracted from head <style> */
+.row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) {
+  .row.two   { grid-template-columns: 1fr 1fr; }
+  .row.three { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 16px 0; }
+legend   { font-weight: 600; padding: 0 6px; }
+label    { display: block; margin: 10px 0 4px; font-weight: 600; }
+
+.inline { display: flex; align-items: center; gap: 8px; }
+.fw-normal { font-weight: 400; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+}
+
+textarea { min-height: 90px; resize: vertical; }
+
+.checkgrid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 520px) { .checkgrid { grid-template-columns: 1fr 1fr; } }
+
+.help    { color: var(--ng-muted); font-size: 13px; }
+.counter { color: var(--ng-muted); font-size: 12px; text-align: right; }
+
+/* Note, actions, buttons, divider */
+.note {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+
+button {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+}
+button.primary { background: var(--ng-red); color: #fff; border-color: var(--ng-red); }
+button.ghost   { background: #fff; color: var(--ng-text); }
+
+.divider { height: 1px; background: var(--line); margin: 24px 0; }
+
+/* Hidden toggles that used to be inline style="display:none" */
+.is-hidden { display: none; }

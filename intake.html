@@ -8,37 +8,6 @@
   <!-- Use the same site-wide assets as index.html -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* Page-scoped form styles (kept from your version) */
-    :root { --bg:#fff; --ink:#111; --muted:#666; --accent:#b91c1c; --line:#e5e7eb; }
-    * { box-sizing: border-box; }
-    body { margin:0; font:16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); }
-    header, main, footer { max-width:840px; margin:0 auto; padding:16px; }
-    h2 { margin:24px 0 8px; font-size:18px; }
-    fieldset { border:1px solid var(--line); border-radius:10px; padding:12px; margin:16px 0; }
-    legend { font-weight:600; padding:0 6px; }
-    label { display:block; margin:10px 0 4px; font-weight:600; }
-    .row { display:grid; grid-template-columns:1fr; gap:12px; }
-    @media (min-width:640px){ .row.two { grid-template-columns:1fr 1fr; } .row.three { grid-template-columns:1fr 1fr 1fr; } }
-    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
-      width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font:inherit;
-    }
-    textarea { min-height:90px; resize:vertical; }
-    .checkgrid { display:grid; grid-template-columns:1fr; gap:8px; }
-    @media (min-width:520px){ .checkgrid { grid-template-columns:1fr 1fr; } }
-    .inline { display:flex; align-items:center; gap:8px; }
-    .help { color:var(--muted); font-size:13px; }
-    .counter { color:var(--muted); font-size:12px; text-align:right; }
-    .muted { color:var(--muted); }
-    .note { background:#fff7ed; border:1px solid #fed7aa; padding:10px 12px; border-radius:8px; }
-    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
-    button { appearance:none; cursor:pointer; border-radius:10px; padding:12px 16px; font-weight:600; border:1px solid var(--line); }
-    .primary { background:var(--accent); color:#fff; border-color:var(--accent); }
-    .ghost { background:#fff; color:var(--ink); }
-    .divider { height:1px; background:var(--line); margin:24px 0; }
-    .subtle { color:var(--muted); font-size:14px; margin:8px 0 0; }
-  </style>
 </head>
 
 <body class="body page-intake">
@@ -92,7 +61,7 @@
         <div class="row two">
           <div class="inline">
             <input id="under17" name="under17" type="checkbox" value="yes">
-            <label for="under17" style="font-weight:400;">I am under the age of 17 (parent/guardian consent required)</label>
+            <label for="under17" class="fw-normal">I am under the age of 17 (parent/guardian consent required)</label>
           </div>
         </div>
       </fieldset>
@@ -110,32 +79,33 @@
           <label class="inline"><input type="checkbox" name="health[]" value="Heart Conditions"> Heart Conditions</label>
           <label class="inline"><input type="checkbox" name="health[]" value="Injuries"> Injuries</label>
           <label class="inline"><input type="checkbox" name="health[]" value="Smoking"> Smoking</label>
-          <!-- Fix id/value so the due date logic works -->
+          <!-- Keep id for JS -->
           <label class="inline"><input type="checkbox" id="pregnant" name="health[]" value="Currently Pregnant"> Currently Pregnant</label>
         </div>
 
-        <div id="dueDateWrap" style="display:none; margin-top:8px;">
+        <div id="dueDateWrap" class="mt-8 is-hidden">
           <label for="dueDate">Due Date</label>
           <input id="dueDate" name="dueDate" type="date">
         </div>
 
-        <label for="healthNotes" style="margin-top:12px;">Please explain any checked items</label>
+        <label for="healthNotes" class="mt-12">Please explain any checked items</label>
         <textarea id="healthNotes" name="healthNotes" maxlength="1000" placeholder="Provide details that help your therapist tailor your session."></textarea>
         <div class="counter" data-for="healthNotes">0 / 1000</div>
 
         <!-- Any medical conditions + simple textbox directly beneath Yes/No -->
-        <div style="margin-top:8px;">
-          <span class="muted" style="display:block; margin-bottom:6px; font-weight:600;">Any medical conditions your therapist should be aware of?</span>
+        <div class="mt-8">
+          <span class="muted" style="font-weight:600;">Any medical conditions your therapist should be aware of?</span>
           <label class="inline"><input type="radio" name="medAware" value="Yes" id="medAwareYes"> Yes</label>
           <label class="inline"><input type="radio" name="medAware" value="No"  id="medAwareNo"  checked> No</label>
         </div>
-        <div style="margin-top:8px;">
+
+        <div class="mt-8">
           <label for="medAwareExplain">Medical Conditions</label>
           <textarea id="medAwareExplain" name="medAwareExplain" maxlength="800" placeholder="Briefly explain any medical conditions, if applicable"></textarea>
           <div class="counter" data-for="medAwareExplain">0 / 800</div>
         </div>
 
-        <label for="medications" style="margin-top:8px;">Current Medications</label>
+        <label for="medications" class="mt-8">Current Medications</label>
         <textarea id="medications" name="medications" maxlength="800" placeholder="List names/dosages if relevant."></textarea>
         <div class="counter" data-for="medications">0 / 800</div>
       </fieldset>
@@ -144,7 +114,7 @@
       <fieldset>
         <legend>Massage Request</legend>
         <div class="help">Check all that apply.</div>
-        <div class="checkgrid" style="margin-top:8px;">
+        <div class="checkgrid mt-8">
           <label class="inline"><input type="checkbox" name="massageType[]" value="Swedish / Relaxation"> Swedish / Relaxation</label>
           <label class="inline"><input type="checkbox" name="massageType[]" value="Deep Tissue"> Deep Tissue</label>
           <label class="inline"><input type="checkbox" name="massageType[]" value="Pregnancy Massage"> Pregnancy Massage</label>
@@ -153,11 +123,11 @@
           <label class="inline"><input type="checkbox" name="massageType[]" value="Trigger Point"> Trigger Point</label>
         </div>
 
-        <label for="painAreas" style="margin-top:12px;">Areas of pain/tension</label>
+        <label for="painAreas" class="mt-12">Areas of pain/tension</label>
         <textarea id="painAreas" name="painAreas" maxlength="600" placeholder="e.g., lower back, right shoulder, calves"></textarea>
         <div class="counter" data-for="painAreas">0 / 600</div>
 
-        <label for="avoidAreas" style="margin-top:12px;">Areas to be avoided</label>
+        <label for="avoidAreas" class="mt-12">Areas to be avoided</label>
         <textarea id="avoidAreas" name="avoidAreas" maxlength="600" placeholder="e.g., recent injury, ticklish feet, sensitive neck"></textarea>
         <div class="counter" data-for="avoidAreas">0 / 600</div>
       </fieldset>
@@ -171,7 +141,7 @@
           medical diagnosis, you may be asked to provide a physician’s written consent before services.
         </div>
 
-        <ul class="muted" style="margin:10px 0 0 18px;">
+        <ul class="muted list-indent">
           <li>Sexual remarks or advances will end the session immediately; full payment will still be due.</li>
           <li>You are not allowed to touch the therapist for any reason.</li>
           <li>Female clients: if desiring a breast massage, indicate this below; the area will remain draped.</li>
@@ -179,7 +149,7 @@
           <li>If you are uncomfortable for any reason, please tell the therapist to end the session.</li>
         </ul>
 
-        <label for="partsMassaged" style="margin-top:12px;">Parts of the body to be massaged (optional)</label>
+        <label for="partsMassaged" class="mt-12">Parts of the body to be massaged (optional)</label>
         <textarea id="partsMassaged" name="partsMassaged" maxlength="600"></textarea>
         <div class="counter" data-for="partsMassaged">0 / 600</div>
       </fieldset>
@@ -187,19 +157,19 @@
       <!-- Electronic signature (typed) -->
       <fieldset>
         <legend>Electronic Signature</legend>
-        <p class="muted" style="margin-top:0;">
+        <p class="muted">
           By typing my name below and checking the box, I understand and agree that this action constitutes my
           electronic signature. I consent to the use of electronic records and signatures, and I confirm that the
           information I have provided is true and correct. I acknowledge that this electronic signature carries the same
           legal effect as a handwritten signature.
         </p>
 
-        <label class="inline" style="margin-top:8px;">
+        <label class="inline mt-8">
           <input type="checkbox" id="consent" name="consent" required>
           <span><strong>I agree to sign electronically</strong></span>
         </label>
 
-        <div class="row two" style="margin-top:8px;">
+        <div class="row two mt-8">
           <div>
             <label for="sigName">Name (type full legal name) *</label>
             <input id="sigName" name="sigName" type="text" required>
@@ -231,7 +201,7 @@
   </main>
 
   <!-- Match site footer -->
-  <footer>
+  <footer class="site-footer">
     <p>© 2025 - AI Alchemy - San Antonio, TX</p>
   </footer>
 
@@ -242,15 +212,17 @@
     document.getElementById('intakeDate').value = todayStr;
     document.getElementById('sigDate').value = todayStr;
     document.getElementById('isoTimestamp').value = new Date().toISOString();
-    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
 
-    // Conditional due date (relies on #pregnant checkbox)
+    // Conditional due date (toggle class instead of inline style)
     const pregnant = document.getElementById('pregnant');
     const dueWrap = document.getElementById('dueDateWrap');
     if (pregnant && dueWrap) {
       const toggleDue = () => {
-        dueWrap.style.display = pregnant.checked ? 'block' : 'none';
-        if (!pregnant.checked) { const due = document.getElementById('dueDate'); if (due) due.value = ''; }
+        dueWrap.classList.toggle('is-hidden', !pregnant.checked);
+        if (!pregnant.checked) {
+          const due = document.getElementById('dueDate');
+          if (due) due.value = '';
+        }
       };
       pregnant.addEventListener('change', toggleDue);
       toggleDue();
