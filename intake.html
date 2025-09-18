@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>New Grotto Massage – Client Intake & Consent</title>
+  <title>Client Intake & Consent Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root { --bg:#fff; --ink:#111; --muted:#666; --accent:#b91c1c; --line:#e5e7eb; }
@@ -39,8 +39,8 @@
 </head>
 <body>
   <header>
-    <h1>New Grotto Massage – Client Intake & Consent</h1>
-    <div class="sub">3700 Fredericksburg Rd., #103 • San Antonio, TX 78201 • (210) 735-3333</div>
+    <h1>Client Intake & Consent</h1>
+    <div class="sub">Your information is collected to provide services and to meet Texas massage therapy intake/record-keeping requirements.</div>
   </header>
 
   <main>
@@ -93,11 +93,8 @@
           <label class="inline"><input type="checkbox" name="health[]" value="Heart Conditions"> Heart Conditions</label>
           <label class="inline"><input type="checkbox" name="health[]" value="Injuries"> Injuries</label>
           <label class="inline"><input type="checkbox" name="health[]" value="Smoking"> Smoking</label>
-        </div>
+		  <label class="inline"><input type="checkbox" name="health[]" value="Smoking"> Currently Pregnant</label>
 
-        <div class="inline" style="margin-top:8px;">
-          <input id="pregnant" type="checkbox" name="pregnant" value="yes">
-          <label for="pregnant" style="font-weight:400;">Currently Pregnant</label>
         </div>
 
         <div id="dueDateWrap" style="display:none; margin-top:8px;">
@@ -116,7 +113,7 @@
           <label class="inline"><input type="radio" name="medAware" value="No"  id="medAwareNo"  checked> No</label>
         </div>
         <div style="margin-top:8px;">
-          <label for="medAwareExplain">Explain</label>
+          <label for="medAwareExplain">Medical Conditions</label>
           <textarea id="medAwareExplain" name="medAwareExplain" type="text" maxlength="800" placeholder="Briefly explain any medical conditions, if applicable"></textarea>
 		  <div class="counter" data-for="medAwareExplain">0 / 800</div>	
 		</div>
@@ -189,6 +186,7 @@
           <div>
             <label for="sigName">Name (type full legal name) *</label>
             <input id="sigName" name="sigName" type="text" required>
+			<label id="ifunder17">(Parent or Legal Guardian if under the age of 17)</label>
           </div>
           <div>
             <label for="sigDate">Signature Date</label>
