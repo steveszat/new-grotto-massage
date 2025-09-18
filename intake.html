@@ -225,7 +225,7 @@
 
       <!-- Submission -->
       <div class="actions">
-        <button type="submit" class="primary">Submit</button>
+        <button type="submit" class="primary" id="submitBtn" disabled>Submit</button>
         <button type="button" class="ghost" id="printBtn">Print (optional)</button>
       </div>
 
@@ -247,6 +247,25 @@
   </footer>
 
   <script>
+  const consent = document.getElementById('consent');
+const sigName = document.getElementById('sigName');
+const submitBtn = document.getElementById('submitBtn');
+
+function toggleSubmit() {
+  if (consent.checked && sigName.value.trim() !== '') {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+}
+
+// Run on input/change
+consent.addEventListener('change', toggleSubmit);
+sigName.addEventListener('input', toggleSubmit);
+
+// Initialize on load
+toggleSubmit();
+
     // Autofill dates
     const todayLocal = new Date();
     const todayStr = todayLocal.toLocaleDateString();
