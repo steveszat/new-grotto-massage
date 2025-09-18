@@ -116,9 +116,10 @@
           <label class="inline"><input type="radio" name="medAware" value="No"  id="medAwareNo"  checked> No</label>
         </div>
         <div style="margin-top:8px;">
-          <label for="medAwareExplain">Explain (optional)</label>
-          <input id="medAwareExplain" name="medAwareExplain" type="text" maxlength="200" placeholder="Briefly explain, if applicable">
-        </div>
+          <label for="medAwareExplain">Explain</label>
+          <textarea id="medAwareExplain" name="medAwareExplain" type="text" maxlength="800" placeholder="Briefly explain any medical conditions, if applicable"></textarea>
+		  <div class="counter" data-for="medAwareExplain">0 / 800</div>	
+		</div>
 
         <label for="medications" style="margin-top:8px;">Current Medications</label>
         <textarea id="medications" name="medications" maxlength="800" placeholder="List names/dosages if relevant."></textarea>
