@@ -119,6 +119,95 @@ body{
 .text-gold{color:var(--ng-gold)}
 .italic{font-style:italic}
 
+/* Benefits section */
+.benefits-section {
+  padding: 4.5rem 1.5rem 5rem;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+    #f4efe6;
+  border-top: 1px solid rgba(139, 26, 26, 0.08);
+}
+
+.benefits-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  line-height: 1.8;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(184, 134, 11, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(60, 30, 10, 0.08);
+}
+
+.benefits-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9c6b16;
+}
+
+.benefits-inner h2 {
+  position: relative;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #2b2118;
+}
+
+.benefits-inner h2::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 0.9rem auto 0;
+  background: linear-gradient(to right, #b8860b, #d4a437);
+  border-radius: 999px;
+}
+
+.benefits-lead {
+  margin: 0 0 1.5rem;
+  font-size: 1.16rem;
+  color: #4b3728;
+}
+
+.benefits-inner p {
+  margin: 0 0 1.4rem;
+  font-size: 1.05rem;
+  color: #2f241b;
+}
+
+.benefits-highlight {
+  font-size: 1.1rem;
+}
+
+.benefits-closing {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(184, 134, 11, 0.22);
+  font-size: 1.12rem;
+  color: #7a1414;
+}
+
+@media (max-width: 640px) {
+  .benefits-section {
+    padding: 3.25rem 1rem 3.75rem;
+  }
+
+  .benefits-inner {
+    padding: 2rem 1.25rem;
+    border-radius: 14px;
+  }
+
+  .benefits-lead,
+  .benefits-inner p,
+  .benefits-highlight,
+  .benefits-closing {
+    font-size: 1rem;
+  }
+}
+
 /* Services grid */
 .service-menu{padding:1rem 0}
 .service-grid{
