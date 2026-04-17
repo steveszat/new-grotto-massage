@@ -120,7 +120,7 @@ body{
 .italic{font-style:italic}
 
 /* Benefits section */
-.benefits-section {
+.page-home .benefits-section {
   padding: 4.5rem 1.5rem 5rem;
   background:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
@@ -128,7 +128,7 @@ body{
   border-top: 1px solid rgba(139, 26, 26, 0.08);
 }
 
-.benefits-inner {
+.page-home .benefits-inner {
   max-width: 760px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
@@ -140,7 +140,7 @@ body{
   box-shadow: 0 10px 28px rgba(60, 30, 10, 0.08);
 }
 
-.benefits-kicker {
+.page-home .benefits-kicker {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
   font-weight: 700;
@@ -149,14 +149,14 @@ body{
   color: #9c6b16;
 }
 
-.benefits-inner h2 {
+.page-home .benefits-inner h2 {
   position: relative;
   margin: 0 0 1.25rem;
   font-size: clamp(2rem, 4vw, 2.6rem);
   color: #2b2118;
 }
 
-.benefits-inner h2::after {
+.page-home .benefits-inner h2::after {
   content: "";
   display: block;
   width: 84px;
@@ -166,23 +166,23 @@ body{
   border-radius: 999px;
 }
 
-.benefits-lead {
+.page-home .benefits-lead {
   margin: 0 0 1.5rem;
   font-size: 1.16rem;
   color: #4b3728;
 }
 
-.benefits-inner p {
+.page-home .benefits-inner p {
   margin: 0 0 1.4rem;
   font-size: 1.05rem;
   color: #2f241b;
 }
 
-.benefits-highlight {
+.page-home .benefits-highlight {
   font-size: 1.1rem;
 }
 
-.benefits-closing {
+.page-home .benefits-closing {
   margin-top: 2rem;
   padding-top: 1.4rem;
   border-top: 1px solid rgba(184, 134, 11, 0.22);
@@ -191,19 +191,19 @@ body{
 }
 
 @media (max-width: 640px) {
-  .benefits-section {
+  .page-home .benefits-section {
     padding: 3.25rem 1rem 3.75rem;
   }
 
-  .benefits-inner {
+  .page-home .benefits-inner {
     padding: 2rem 1.25rem;
     border-radius: 14px;
   }
 
-  .benefits-lead,
-  .benefits-inner p,
-  .benefits-highlight,
-  .benefits-closing {
+  .page-home .benefits-lead,
+  .page-home .benefits-inner p,
+  .page-home .benefits-highlight,
+  .page-home .benefits-closing {
     font-size: 1rem;
   }
 }
@@ -926,3 +926,4 @@ button.ghost   { background: #fff; color: var(--ng-text); }
 
 /* Hidden toggles that used to be inline style="display:none" */
 .is-hidden { display: none; }
+
