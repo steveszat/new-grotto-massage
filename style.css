@@ -192,6 +192,163 @@ body{
   }
 }
 
+/* === Feedback Page === */
+
+.feedback-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 18px 56px;
+}
+
+.feedback-card {
+  background: #ffffff;
+  border: 1px solid #d8d2cc;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+}
+
+.feedback-card h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.feedback-intro {
+  color: #666666;
+  margin-bottom: 24px;
+}
+
+.feedback-section {
+  margin-bottom: 22px;
+}
+
+.feedback-section label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feedback-hint {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-top: 6px;
+}
+
+.feedback-input,
+.feedback-select,
+.feedback-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d8d2cc;
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+  color: #222;
+}
+
+.feedback-textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feedback-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.feedback-checkbox-row input {
+  margin-top: 3px;
+}
+
+.feedback-checkbox-row label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.feedback-privacy {
+  background: #faf7f4;
+  border: 1px solid #d8d2cc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.96rem;
+  color: #666;
+}
+
+.feedback-actions {
+  margin-top: 28px;
+}
+
+.feedback-button {
+  border: 0;
+  background: #8b1e2d;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feedback-button:hover {
+  background: #721927;
+}
+
+.feedback-success,
+.feedback-error {
+  display: none;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.feedback-success {
+  background: #eef8ee;
+  border: 1px solid #b7d9b7;
+  color: #245b24;
+}
+
+.feedback-error {
+  background: #fff1f1;
+  border: 1px solid #e0b3b3;
+  color: #7a1f1f;
+}
+
+.feedback-field-error {
+  min-height: 1.2em;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #7a1f1f;
+}
+
+.feedback-hp {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 640px) {
+  .feedback-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-card {
+    padding: 22px 18px;
+  }
+
+  .feedback-card h1 {
+    font-size: 1.7rem;
+  }
+}
+
 /* Services grid */
 .service-menu{padding:1rem 0}
 .service-grid{

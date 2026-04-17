@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Feedback</title>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="feedback-page">
+    <div class="feedback-card">
+
+      <h1>Share Your Feedback</h1>
+
+      <p class="feedback-intro">
+        We welcome honest feedback. If you had a great experience, we may use selected comments
+        as testimonials on our website based on the option you choose below.
+      </p>
+
+      <form id="feedbackForm" novalidate>
+
+        <!-- NAME -->
+        <div class="feedback-section">
+          <label>Your name</label>
+
+          <div class="feedback-grid">
+            <div>
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                maxlength="120"
+                placeholder="First name"
+                class="feedback-input"
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                maxlength="120"
+                placeholder="Last name"
+                class="feedback-input"
+              />
+            </div>
+          </div>
+
+          <div class="feedback-hint">
+            Only your name may be shown publicly, based on your selection below. Your email and phone
+            number, if provided, are always kept private.
+          </div>
+        </div>
+
+        <!-- PERMISSION -->
+        <div class="feedback-section">
+          <label for="permission">Can we share your comments on our website?</label>
+
+          <select id="permission" name="permission" class="feedback-select">
+            <option value="public_first_last_initial" selected>
+              Yes, use my first name and last initial
+            </option>
+            <option value="public_first">
+              Yes, use my first name only
+            </option>
+            <option value="public_anonymous">
+              Yes, but keep me anonymous
+            </option>
+            <option value="private">
+              No, keep it private
+            </option>
+          </select>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="feedback-section">
+          <label for="category">Type of message</label>
+
+          <select id="category" name="category" class="feedback-select">
+            <option value="feedback" selected>Feedback</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="complaint">Complaint</option>
+            <option value="testimonial">Testimonial</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="feedback-section">
+          <label for="message">
+            Your feedback <span style="color:#8b1e2d">*</span>
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            required
+            maxlength="5000"
+            placeholder="Tell us what you enjoyed, what stood out, or what we could do better."
+            class="feedback-textarea"
+          ></textarea>
+
+          <div class="feedback-hint">
+            Please share enough detail to help us understand your experience.
+          </div>
+        </div>
+
+        <!-- PRIVACY -->
+        <div class="feedback-section">
+          <div class="feedback-privacy">
+            Your email address and phone number, if provided, will remain private and will never be shown publicly.
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="feedback-section">
+          <div class="feedback-grid">
+
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                maxlength="255"
+                placeholder="you@example.com"
+                class="feedback-input"
+              />
+              <div id="emailError" class="feedback-field-error"></div>
+            </div>
+
+            <div>
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                maxlength="40"
+                placeholder="(210) 555-1234"
+                class="feedback-input"
+              />
+              <div id="phoneError" class="feedback-field-error"></div>
+            </div>
+
+          </div>
+
+          <div class="feedback-checkbox-row">
+            <input type="checkbox" id="contact_ok" name="contact_ok" disabled />
+            <label for="contact_ok">
+              Okay to contact me about this feedback
+            </label>
+          </div>
+
+          <div class="feedback-hint">
+            This becomes available only if you provide a valid email address or valid phone number.
+          </div>
+        </div>
+
+        <!-- HONEYPOT -->
+        <div class="feedback-hp" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="feedback-actions">
+          <button type="submit" class="feedback-button">
+            Submit Feedback
+          </button>
+        </div>
+
+        <!-- STATUS -->
+        <div id="successMessage" class="feedback-success">
+          Thank you. We appreciate your feedback.
+        </div>
+
+        <div id="errorMessage" class="feedback-error">
+          Something went wrong. Please try again.
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const permissionField = document.getElementById('permission');
+    const categoryField = document.getElementById('category');
+    const contactCheckbox = document.getElementById('contact_ok');
+    const emailField = document.getElementById('email');
+    const phoneField = document.getElementById('phone');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+
+    function clearFieldErrors() {
+      emailError.textContent = '';
+      phoneError.textContent = '';
+    }
+
+    function isValidEmail(email) {
+      if (!email) return false;
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function normalizePhoneDigits(value) {
+      return String(value || '').replace(/\D/g, '');
+    }
+
+    function formatPhone(digits) {
+      if (digits.length !== 10) return digits;
+      return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+    }
+
+    function isValidPhone(phoneValue) {
+      if (!phoneValue) return false;
+      return normalizePhoneDigits(phoneValue).length === 10;
+    }
+
+    function updateContactCheckbox() {
+      const email = emailField.value.trim();
+      const phone = phoneField.value.trim();
+
+      const validEmail = isValidEmail(email);
+      const validPhone = isValidPhone(phone);
+
+      if (validEmail || validPhone) {
+        contactCheckbox.disabled = false;
+      } else {
+        contactCheckbox.checked = false;
+        contactCheckbox.disabled = true;
+      }
+    }
+
+    function validateOptionalFields() {
+      clearFieldErrors();
+
+      const email = emailField.value.trim();
+      const phone = phoneField.value.trim();
+
+      let valid = true;
+
+      if (email && !isValidEmail(email)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        valid = false;
+      }
+
+      if (phone && !isValidPhone(phone)) {
+        phoneError.textContent = 'Please enter a 10-digit phone number.';
+        valid = false;
+      }
+
+      if (contactCheckbox.checked) {
+        const emailOk = isValidEmail(email);
+        const phoneOk = isValidPhone(phone);
+
+        if (!emailOk && !phoneOk) {
+          emailError.textContent = 'Provide a valid email or phone number.';
+          phoneError.textContent = 'Provide a valid email or phone number.';
+          valid = false;
+        }
+      }
+
+      return valid;
+    }
+
+    function handlePhoneBlur() {
+      const digits = normalizePhoneDigits(phoneField.value);
+      if (digits.length === 10) {
+        phoneField.value = formatPhone(digits);
+      }
+      validateOptionalFields();
+      updateContactCheckbox();
+    }
+
+    function handleInput() {
+      validateOptionalFields();
+      updateContactCheckbox();
+    }
+
+    updateContactCheckbox();
+
+    emailField.addEventListener('input', handleInput);
+    phoneField.addEventListener('input', handleInput);
+    emailField.addEventListener('blur', handleInput);
+    phoneField.addEventListener('blur', handlePhoneBlur);
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      if (!validateOptionalFields()) {
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      let permission = formData.get('permission');
+      const firstName = (formData.get('first_name') || '').trim();
+      const lastName = (formData.get('last_name') || '').trim();
+      const message = (formData.get('message') || '').trim();
+      const email = (formData.get('email') || '').trim();
+      const phoneDigits = normalizePhoneDigits(formData.get('phone') || '');
+      const formattedPhone = phoneDigits.length === 10 ? formatPhone(phoneDigits) : '';
+
+      if (
+        (permission === 'public_first_last_initial' || permission === 'public_first') &&
+        !firstName
+      ) {
+        permission = 'public_anonymous';
+      }
+
+      if (!message) {
+        errorMessage.textContent = 'Please enter your feedback before submitting.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      const payload = {
+        business_slug: 'new-grotto-massage',
+        first_name: firstName,
+        last_name: lastName,
+        category: formData.get('category'),
+        message: message,
+        permission: permission,
+        email: email,
+        phone: formattedPhone,
+        contact_ok: formData.get('contact_ok') === 'on',
+        company: (formData.get('company') || '').trim()
+      };
+
+      try {
+        const response = await fetch('/api/submit-feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error();
+
+        form.reset();
+        permissionField.value = 'public_first_last_initial';
+        categoryField.value = 'feedback';
+        clearFieldErrors();
+        updateContactCheckbox();
+        successMessage.style.display = 'block';
+
+      } catch (error) {
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
