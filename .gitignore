@@ -96,3 +96,9 @@ node_modules/
 *.tif
 *.tiff
 *.bmp
+# -----------------------
+# Local backend (development only)
+# -----------------------
+backend/feedback.db
+__pycache__/
+*.pyc
