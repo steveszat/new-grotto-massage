@@ -38,47 +38,45 @@ body{
 /* Footer */
 .site-footer{background:var(--ng-red); color:#fff; text-align:center; padding:1rem 1rem}
 
-/* Hero (shared) */
+/* Hero (shared layout only) */
 .hero{
+  margin:1rem;
+}
+
+.hero .lede{font-size:1.125rem}
+
+.about-page .hero{
   text-align:center;
   color:#fff;
   text-shadow:1px 1px 3px rgba(0,0,0,.5);
   background-color:#d7a86e;
-  background-repeat:no-repeat; background-position:center; background-size:contain;
-  padding:1rem 1rem;
-  margin:1rem;
-}
-.hero h2{font-size:2rem; margin:.25em 0 .5em}
-.hero .lede{font-size:1.125rem}
-/* Hands down, best massage in town */
-.hero .tagline{font-style:italic; color: #fff; font-weight:bold}
-/* Generic semantic text roles */
-.tagline-text {
-  font-size: 1.1em;   /* closer to normal body text size */
-  margin-top: 15px;
-  color: #fff;
+  padding:1rem;
 }
 
-
-.hero-accent {
-  color: #fff;   /* still controls "Relief is at hand" */
-  font-weight: bold;
-}
-
-.hero--services{
-  background-image: image-set(
-    url("assets/optimized/scroll.webp") type("image/webp"),
-    url("assets/scroll.png")           type("image/png")
-  );
-}
-.hero-about {
+.about .hero-about{
+  background-color:#d7a86e;
   background-image: image-set(
     url("assets/optimized/characters.webp") type("image/webp"),
     url("assets/characters.png") type("image/png")
   );
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: contain;   /* instead of cover */
+  background-size: contain;
+  text-align:center;
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,.5);
+  padding:1rem;
+}
+
+.about .hero-about h2{
+  font-size:2rem;
+  margin:.25em 0 .5em;
+}
+
+.about .hero-about .tagline{
+  font-style:italic;
+  color:#fff;
+  font-weight:bold;
 }
 .about-hero-image {
   display: block;
@@ -88,20 +86,6 @@ body{
   content: image-set(
     url("assets/optimized/building-the-new-you2.webp") type("image/webp"),
     url("assets/building-the-new-you2.png") type("image/png")
-  );
-}
-
-.hero--contact{
-  background-image: image-set(
-    url("assets/optimized/corded_phone2.webp") type("image/webp"),
-    url("assets/corded_phone2.png")            type("image/png")
-  );
-}
-/* FAQ hero */
-.hero--faq {
-  background-image: image-set(
-    url("assets/optimized/faq_background.webp") type("image/webp"),
-    url("assets/faq_background.png")            type("image/png")
   );
 }
 
@@ -247,76 +231,33 @@ body{
 .map-embed{max-width:100%; height:350px; margin:0 1rem 1rem}
 .map-embed iframe{width:100%; height:100%; border:0}
 /* Relief is at hand */
-.hero-accent {
-  color: #fff;
-  font-weight: bold;
-}
-
 .text-white {
   color: #fff;
 }
-/* Make the content band (between header and footer) linen again */
-main {
-  background: var(--ng-linen);
-  padding-bottom: 140px; /* adjust this to get the exact “big gap” you like */
-}
-/* 🎨 Global Theme Palette */
-:root {
-  --color-primary: #a61d2d;   /* ng-red */
-  --color-secondary: #d4a373; /* goldish accent */
-  --color-accent: #d88c1e;    /* your new body bg (orange-gold) */
-  --color-light: #f8f1e8;     /* linen */
-  --color-dark: #2a2a2a;      /* deep text fallback */
-  --color-text: #ffffff;      /* default light text */
-}
 
-/* 🌐 Site-Wide Base */
-body.body {
-  background-color: var(--color-accent);
-  color: var(--color-dark);
-  font-family: 'Georgia', serif; /* or your preferred font */
-}
-
-/* 📝 Text Utility Classes */
+/* Text utility classes */
 .text-primary {
-  color: var(--color-primary);
+  color: var(--ng-red);
 }
 
 .text-secondary {
-  color: var(--color-secondary);
+  color: var(--ng-gold);
 }
 
 .text-accent {
-  color: var(--color-accent);
+  color: var(--ng-gold);
 }
 
 .text-light {
-  color: var(--color-light);
+  color: #fff;
 }
 
 .text-dark {
-  color: var(--color-dark);
+  color: var(--ng-text);
 }
 
 .text-inverse {
-  color: var(--color-text);
-}
-
-/* 🎯 Reusable Accent Class */
-.hero-accent {
-  color: var(--color-light);
-  font-weight: bold;
-}
-.text-light {
-  color: var(--color-light);
-}
-
-.text-dark {
-  color: var(--color-dark);
-}
-
-.text-accent {
-  color: var(--color-accent);
+  color: #fff;
 }
 
 /* --- About Page Styling --- */
@@ -483,6 +424,11 @@ body.body {
   text-shadow:1px 1px 3px rgba(0,0,0,.7);
 }
 
+.page-faq .hero--faq h2{
+  font-size:2rem;
+  margin:.25em 0 .5em;
+}
+
 .page-faq .faq-intro{ margin:1rem 0; text-align:center; }
 
 .page-faq .faq-col{
@@ -521,6 +467,17 @@ body.body {
   padding: var(--contact-hero-padding);
 }
 
+.page-contact .hero--contact h2{
+  font-size:2rem;
+  margin:.25em 0 .5em;
+}
+
+.page-contact .hero--contact .tagline{
+  font-style:italic;
+  color:#fff;
+  font-weight:bold;
+}
+
 .page-contact .map-frame{
   max-width:100%;
   height: var(--contact-map-height);
@@ -550,10 +507,32 @@ body.body {
   text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 }
 
+.page-home .hero--home h2 {
+  font-size: 2rem;
+  margin: .25em 0 .5em;
+}
+
 .page-home .home-intro {
   max-width: 340px;
   margin: 0 auto;
   text-align: left;
+}
+
+.page-home .tagline-text {
+  font-size: 1.1em;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.page-home .hero--home .tagline {
+  font-style: italic;
+  color: #fff;
+  font-weight: bold;
+}
+
+.page-home .hero-accent {
+  color: #fff;
+  font-weight: bold;
 }
 
 .page-home .phone-link {
@@ -575,6 +554,11 @@ body.body {
   padding: 2em 1em;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.page-services .hero--services h2 {
+  font-size: 2rem;
+  margin: .25em 0 .5em;
 }
 /* ===== Etiquette (scoped to etiquette.html only) ===== */
 
@@ -601,6 +585,17 @@ body.body {
   padding: var(--etiquette-hero-padding);
   color:#fff;
   text-shadow:1px 1px 3px rgba(0,0,0,.6);
+}
+
+.page-etiquette .hero--etiquette h2{
+  font-size:2rem;
+  margin:.25em 0 .5em;
+}
+
+.page-etiquette .hero--etiquette .tagline{
+  font-style:italic;
+  color:#fff;
+  font-weight:bold;
 }
 
 /* Tagline width: was max-width:600px; margin:.5em auto; */
