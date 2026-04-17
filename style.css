@@ -837,3 +837,6 @@ button.ghost   { background: #fff; color: var(--ng-text); }
 
 /* Hidden toggles that used to be inline style="display:none" */
 .is-hidden { display: none; }
+/* Qi hero image sizing */
+.about-qi-hero-image { display:block; max-width: 400px; width:100%; height:auto; margin:0 auto 1rem; }
+

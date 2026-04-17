@@ -1,0 +1,5 @@
+# Ensure PHP handles this directory and block direct listing
+Options -Indexes
+<FilesMatch "\.php$">
+  SetHandler application/x-httpd-php
+</FilesMatch>
