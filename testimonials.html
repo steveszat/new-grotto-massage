@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Testimonials | New Grotto Massage</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="page-testimonials">
+  <header class="site-header">
+    <div class="brand">
+      <h1>New Grotto Massage</h1>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/testimonials.html" aria-current="page">Testimonials</a>
+      <a href="/feedback.html">Share Feedback</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+    <section class="hero hero--services">
+      <h2>What Our Customers Say</h2>
+      <p class="lede">
+        Real feedback from customers who chose to let us share their experience.
+      </p>
+    </section>
+
+    <section class="service-menu" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading" style="text-align:center; color:#fff; margin:0 0 1rem;">
+        Customer Testimonials
+      </h2>
+
+      <div id="testimonial-status" class="note" style="width:min(1200px, 96%); margin:0 auto 1rem;">
+        Loading testimonials...
+      </div>
+
+      <div id="testimonial-list" class="service-grid" aria-live="polite"></div>
+
+      <p class="service-note">
+        Want to share your experience?
+        <a href="/feedback.html" style="color:#fff; text-decoration:underline;">Share Feedback</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; New Grotto Massage. All rights reserved.</p>
+  </footer>
+
+  <script>
+    async function loadTestimonials() {
+      const statusEl = document.getElementById('testimonial-status');
+      const listEl = document.getElementById('testimonial-list');
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/testimonials');
+
+        if (!response.ok) {
+          throw new Error('Failed to load testimonials');
+        }
+
+        const testimonials = await response.json();
+        listEl.innerHTML = '';
+
+        if (!Array.isArray(testimonials) || testimonials.length === 0) {
+          statusEl.textContent = 'No published testimonials yet.';
+          return;
+        }
+
+        statusEl.textContent = 'Published testimonials';
+
+        testimonials.forEach((item) => {
+          const card = document.createElement('article');
+          card.className = 'service-card';
+
+          const safeName = item.name || 'Anonymous';
+          const safeMessage = item.message || '';
+
+          card.innerHTML = `
+            <h3>${safeName}</h3>
+            <p>${escapeHtml(safeMessage)}</p>
+          `;
+
+          listEl.appendChild(card);
+        });
+      } catch (error) {
+        statusEl.textContent = 'Could not load testimonials right now.';
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    loadTestimonials();
+  </script>
+</body>
+</html>
