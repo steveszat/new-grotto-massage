@@ -9,8 +9,7 @@ from typing import Any
 from flask import Flask, jsonify, request, render_template_string
 from flask_cors import CORS
 
-BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = BASE_DIR / "feedback.db"
+DB_PATH = Path("/var/lib/feedback/feedback.db")
 
 app = Flask(__name__)
 CORS(app)
@@ -645,7 +644,7 @@ def submit_feedback():
     first_name = clean_text(payload.get("first_name"))
     last_name = clean_text(payload.get("last_name"))
     category = clean_text(payload.get("category")).lower()
-    original_message = clean_text(payload.get("message"))
+    original_message = clean_text(payload.get("original_message"))
     permission = clean_text(payload.get("permission")).lower()
     email = clean_text(payload.get("email"))
     phone = clean_text(payload.get("phone"))
@@ -829,7 +828,7 @@ def get_testimonials():
             }
         )
 
-    return jsonify(results), 200
+    return jsonify({"success": True, "testimonials": results}), 200
 
 
 @app.route("/admin/submissions", methods=["GET"])
