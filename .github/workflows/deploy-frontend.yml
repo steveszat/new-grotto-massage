@@ -13,22 +13,27 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Upload frontend via SFTP
-        uses: Dylan700/sftp-upload-action@v1.2.3
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          server: ${{ secrets.HOSTINGER_HOST }}
-          username: ${{ secrets.HOSTINGER_USER }}
-          key: ${{ secrets.HOSTINGER_SSH_KEY }}
-          port: ${{ secrets.HOSTINGER_PORT }}
-          uploads: |
-            ./ => public_html/
-          ignore: |
-            .git
-            .github
-            backend
-            *.db
-            TASKS.md
-            *.zip
-            OUTLINE
-            TIMELINE
-            CODETOUR
+          ssh-private-key: ${{ secrets.HOSTINGER_SSH_KEY }}
+
+      - name: Add Hostinger to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${{ secrets.HOSTINGER_PORT }}" -H "${{ secrets.HOSTINGER_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload frontend via rsync over SSH
+        run: |
+          rsync -avz --delete \
+            -e "ssh -p ${{ secrets.HOSTINGER_PORT }}" \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude "backend" \
+            --exclude "*.db" \
+            --exclude "TASKS.md" \
+            --exclude "*.zip" \
+            --exclude "OUTLINE" \
+            --exclude "TIMELINE" \
+            --exclude "CODETOUR" \
+            ./ ${{ secrets.HOSTINGER_USER }}@${{ secrets.HOSTINGER_HOST }}:public_html/
