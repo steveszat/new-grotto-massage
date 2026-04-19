@@ -4,13 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '*.html'
-      - '*.css'
-      - '*.js'
-      - 'assets/**'
-      - 'images/**'
-      - '.github/workflows/deploy-frontend.yml'
 
 jobs:
   deploy:
@@ -25,7 +18,17 @@ jobs:
         with:
           server: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USER }}
-          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: ${{ secrets.HOSTINGER_PORT }}
           uploads: |
-            ./ => ${{ secrets.HOSTINGER_REMOTE_DIR }}/
+            ./ => public_html/
+          ignore: |
+            .git
+            .github
+            backend
+            *.db
+            TASKS.md
+            *.zip
+            OUTLINE
+            TIMELINE
+            CODETOUR
