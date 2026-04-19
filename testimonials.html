@@ -68,11 +68,11 @@
         listEl.innerHTML = '';
 
         if (!Array.isArray(testimonials) || testimonials.length === 0) {
-          statusEl.textContent = 'No published testimonials yet.';
+          statusEl.textContent = 'No testimonials yet. Be the first to share your experience.';
           return;
         }
 
-        statusEl.textContent = 'Published testimonials';
+        statusEl.textContent = '';
 
         testimonials.forEach((item) => {
           const card = document.createElement('article');
