@@ -367,7 +367,6 @@ body{
   text-align:center;
 }
 .service-card h3{margin:.25rem 0 .5rem; color:#fff; border-bottom:2px solid var(--ng-gold); padding-bottom:.25rem}
-.note{margin-top:1rem; color:#fff; text-align:center}
 .service-note{color:#fff; text-align:center}
 
 /* Callout */
@@ -417,6 +416,7 @@ body{
   color: #fff;
 }
 
+/* ===== Testimonials (scoped to testimonials.html only) ===== */
 .page-testimonials .testimonials-intro,
 .page-testimonials .testimonials-intro h1,
 .page-testimonials .testimonials-intro p {
@@ -463,6 +463,17 @@ body{
 .page-testimonials .service-note a {
   color: inherit;
   text-decoration: underline;
+}
+
+.page-testimonials .testimonial-status {
+  width: 100%;
+  margin: 0 auto 1rem;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--ng-text);
+  text-align: center;
 }
 
 /* --- About Page Styling --- */
