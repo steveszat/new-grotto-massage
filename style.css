@@ -417,6 +417,12 @@ body{
   color: #fff;
 }
 
+#testimonials-heading {
+  text-align: center;
+  color: #222;
+  margin: 0 0 1rem;
+}
+
 /* --- About Page Styling --- */
 
 /* Headings inside content areas */
