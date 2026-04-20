@@ -391,9 +391,14 @@ body{
 .feedback-cta-image img {
   display: block;
   width: 100%;
-  max-width: 400px;
   height: auto;
-  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .feedback-cta-image a {
+    max-width: 320px;
+  }
 }
 
 /* Services grid */
