@@ -377,14 +377,23 @@ body{
 .feedback-cta-image {
   display: flex;
   justify-content: center;
-  margin: 3rem 0;
+  align-items: center;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.feedback-cta-image a {
+  display: block;
+  width: 100%;
+  max-width: 700px;
 }
 
 .feedback-cta-image img {
-  width: 100%;
-  max-width: 650px;   /* controls size */
-  height: auto;
   display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Services grid */
