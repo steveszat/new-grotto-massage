@@ -1172,6 +1172,15 @@ textarea { min-height: 90px; resize: vertical; }
   border-radius: 8px;
 }
 
+/* Note, actions, buttons, divider */
+.not-note {
+  color: v#0c0707;
+  border: 1px solid #fed7aa;
+  padding: 10px 12px;
+  border-radius: 8px;
+  
+}
+
 .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 
 button {
