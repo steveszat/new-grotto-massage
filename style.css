@@ -1199,3 +1199,201 @@ button.ghost   { background: #fff; color: var(--ng-text); }
 /* Hidden toggles that used to be inline style="display:none" */
 .is-hidden { display: none; }
 
+/* About page */
+
+.page-about {
+  background: #f7efe2;
+}
+
+.about-page {
+  color: #22130d;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.about-hero-text {
+  max-width: 620px;
+}
+
+.about-eyebrow {
+  color: #8f151c;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+}
+
+.about-hero h2,
+.about-section h2 {
+  color: #24130d;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 1.5rem;
+}
+
+.about-section h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.about-hero p,
+.about-section p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0 0 1.2rem;
+}
+
+.about-hero-image img {
+  border-radius: 0.35rem;
+  box-shadow: 0 18px 38px rgba(40, 20, 10, 0.22);
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.about-button {
+  background: #b51d29;
+  border: 2px solid #b51d29;
+  border-radius: 0.4rem;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 0.7rem;
+  padding: 0.8rem 1.25rem;
+  text-decoration: none;
+}
+
+.about-button:hover,
+.about-button:focus {
+  background: #8f151c;
+  border-color: #8f151c;
+  color: #fff;
+}
+
+.about-button-secondary {
+  background: transparent;
+  color: #8f151c;
+}
+
+.about-button-secondary:hover,
+.about-button-secondary:focus {
+  background: #8f151c;
+  color: #fff;
+}
+
+.about-section {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.about-values {
+  max-width: 1120px;
+}
+
+.about-values-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.about-value-card {
+  background: #fff8ec;
+  border: 1px solid rgba(181, 29, 41, 0.18);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 24px rgba(70, 35, 10, 0.08);
+  padding: 1.5rem 1.1rem;
+}
+
+.about-value-card h3 {
+  color: #8f151c;
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+}
+
+.about-value-card p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-services-summary {
+  background: #fff8ec;
+  border-bottom: 1px solid rgba(181, 29, 41, 0.16);
+  border-top: 1px solid rgba(181, 29, 41, 0.16);
+  max-width: none;
+}
+
+.about-services-summary p,
+.about-services-summary h2,
+.about-services-summary .about-eyebrow {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-visit {
+  padding-bottom: 4.5rem;
+}
+
+.about-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 860px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem;
+    text-align: center;
+  }
+
+  .about-hero-text {
+    margin: 0 auto;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .about-hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .about-section {
+    padding: 2.75rem 1rem;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-button,
+  .about-button-secondary {
+    width: 100%;
+  }
+
+  .about-button-row {
+    display: block;
+  }
+
+  .about-button-row .about-button + .about-button {
+    margin-top: 0.75rem;
+  }
+}
